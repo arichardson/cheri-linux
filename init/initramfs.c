@@ -23,6 +23,15 @@
 #include "do_mounts.h"
 #include "initramfs_internal.h"
 
+#ifdef __clang__
+#error test error clang
+#endif
+#ifdef __riscv
+#warning test warning non-risc-v
+#else
+#warning test warning non RISC-V
+#endif
+
 static __initdata bool csum_present;
 static __initdata u32 io_csum;
 
